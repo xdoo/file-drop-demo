@@ -10,27 +10,27 @@
     <v-sheet
       ref="dropzone"
       id="dropzone"
-      title="Klicken Sie hier, um eine Datei von Ihrem Rechner auszuwählen."
+      title="Click to select a file from your computer."
       color="black"
       width="100%"
-      style="cursor:pointer;border-style: solid;border-width: 4px;border-color: black;"
+      style="cursor:pointer;border-style: solid;border-width: 4px;border-color: green;"
       height="250"
     >
       <v-col class="white--text">
           <v-row justify="center" v-if="!loading">
             <v-icon
               v-if="!dragover" 
-              :color="fileDropIconColor" 
-              :size="iconSize"
+              color="white" 
+              size="120"
               >mdi-cloud-upload-outline</v-icon>
             <v-icon
               v-if="dragover" 
-              :color="fileDropIconColor" 
-              :size="iconSize"
+              color="white" 
+              size="120"
               >mdi-book-plus</v-icon>
           </v-row>
           <v-row justify="center" v-if="!loading">
-            <span :class="uploadSize">Select or drop your file here!</span>
+            <span>Select or drop your file here!</span>
           </v-row>
           <v-row justify="center" v-if="loading">
             <v-progress-circular
@@ -41,7 +41,7 @@
             ></v-progress-circular>
           </v-row>
           <v-row justify="center" v-if="loading">
-            <span :class="uploadSize">Datei wird verarbeitet</span>
+            <span >Datei wird verarbeitet</span>
           </v-row>
         </v-col>
     </v-sheet>
@@ -52,10 +52,10 @@
 
 <script lang="ts">
   import Vue from "vue"
-  import { Component, Watch, Prop, Ref } from "vue-property-decorator"
+  import { Component } from "vue-property-decorator"
 
   @Component
-  export default class HelloWorld extends Vue {
+  export default class FileDrop extends Vue {
     loading: boolean = false
     dragover: boolean = false
   }

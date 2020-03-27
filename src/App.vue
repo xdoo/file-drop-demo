@@ -13,20 +13,20 @@
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <file-drop/>
     </v-content>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import FileDrop from './components/FileDrop.vue';
 
 export default Vue.extend({
   name: 'App',
 
   components: {
-    HelloWorld,
+    FileDrop,
   },
 
   data: () => ({
